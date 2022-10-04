@@ -1,0 +1,40 @@
+from guizero import App, Window, PushButton, Text, CheckBox, ListBox, TextBox, ButtonGroup, Picture, Combo, Box,info  #window is second form
+#
+# https://lawsie.github.io/guizero/app/
+#
+#This is needed for the sql database
+import sqlite3
+from sqlite3 import Error
+#Import SQL
+import os
+import os.path
+#Import datetime
+import datetime
+#
+#
+#Define the DDL SQL to make the tables
+#
+#Tables created in database with the following details below
+sql = """
+CREATE TABLE "Customer_Table" ( 
+"CustomerID" INTEGER NOT NULL,
+"UserName" TEXT,
+"UserPassword" TEXT,
+"FirstName" TEXT,
+"SecondName" TEXT,
+"EmailAddress" TEXT, 
+"AddressLine1" TEXT,
+PRIMARY KEY("CustomerID" AUTOINCREMENT)
+);
+CREATE TABLE "ReviewTable" (
+"ReviewID"  INTEGER NOT NULL,
+"ReviewTitle" TEXT,
+"ReviewTopic" TEXT,
+"ReviewText"  TEXT,
+"ReviewDate"  DATE,
+"CustomerID"  INTEGER,
+PRIMARY KEY("ReviewID" AUTOINCREMENT),
+CONSTRAINT "CustomerID_fk"  FOREIGN KEY("CustomerID") REFERENCES "Customer_Table"("CustomerID")
+);
+insert into Customer_Table (UserName, UserPassword, FirstName, SecondName, EmailAddress, AddressLine1) values ('userjoe','pass', 'Joe', 'Harris', 'joe.@outlook.com', "24 Halfcast Road");
+"""
