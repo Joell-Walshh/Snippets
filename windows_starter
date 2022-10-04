@@ -1,0 +1,48 @@
+app = App(title="REVIEW", height = 600)
+text_blank = Text(app, text=" ")
+text_blank = Text(app, text=" Welcome to suicide prevention prevention centre revoow ")
+text_blank = Text(app, text=" ")
+text = Text(app, text= "enter user name")
+user_login = TextBox(app)
+text_blank = Text(app, text=" ")
+text = Text(app, text= "enter user Password")
+PW_textbox = TextBox(app)
+text_blank = Text(app, text=" ")
+text_blank = Text(app, text=" ")
+open_button = PushButton(app, text="log in", command=log_in)# button on app, main window
+sign_up_button = PushButton(app, text="SIGN UP", command=sign_up)
+app.bg = "yellow"
+text_blank = Text(app, text=" ")
+
+#################################
+# build sign up window             #
+#################################
+window_sign_up = Window(app, title = "SIGN UP", height=600)
+window_sign_up.hide()
+text_blank = Text(window_sign_up, text=" SIGN UP PAGE ")
+text_blank = Text(window_sign_up, text=" ")
+text = Text(window_sign_up, text= "enter user name")
+userS_textbox = TextBox(window_sign_up)
+text_blank = Text(window_sign_up, text=" ")
+text = Text(window_sign_up, text= "enter user Password")
+PWS_textbox = TextBox(window_sign_up)
+#
+text = Text(window_sign_up, text= "enter first name")
+FnameS_textbox = TextBox(window_sign_up)
+#
+text = Text(window_sign_up, text= "enter last name")
+LnameS_textbox = TextBox(window_sign_up)
+#
+text = Text(window_sign_up, text= "enter email")
+EmailS_textbox = TextBox(window_sign_up)
+#
+#
+text = Text(window_sign_up, text= "enter adress ")
+AdressS_textbox = TextBox(window_sign_up)
+#
+#
+text = Text(window_sign_up, text= "enter country")
+CountryS_textbox = TextBox(window_sign_up)
+text_blank = Text(window_sign_up, text=" ")
+done_button = PushButton(window_sign_up, text="create account", command=create_acct)
+window_sign_up.bg = "magenta"
