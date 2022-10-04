@@ -1,0 +1,16 @@
+def create_acct():  #### TEST WITH 'or 1 = 1; -- 
+	if userS_textbox.value == "":
+		info("Error", "You must enter username")
+	elif PWS_textbox.value == "":
+		info("Error", "You must enter a password")
+	elif FnameS_textbox.value == "":
+		info("Error", "You must enter a first name")
+		#
+		# more validation
+	else:
+		# insert 
+#
+		InsertDataSQL = ("INSERT INTO Customer_Table(UserName, UserPassword, FirstName, SecondName, EmailAddress, AddressLine1) VALUES ('"+ userS_textbox.value + "', '" + PWS_textbox.value + "', '" + FnameS_textbox.value + "', '" + LnameS_textbox.value + "', '" + EmailS_textbox.value + "', '" + AdressS_textbox.value + "')")
+		# call function to insert record
+		execute_sql(database_file, InsertDataSQL)
+		info("Success","new account created: ")
